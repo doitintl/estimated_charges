@@ -1,0 +1,18 @@
+runtime: python37
+api_version: 1
+service: estimated_charges
+
+builtins:
+- deferred: on
+
+handlers:
+- url: /
+  script: main.app
+- url: /_ah/task/estimated_charges
+  script: main.app
+
+env_variables:
+  QUERY_TEMPLATE: 'SELECT service.description AS service, SUM(cost) AS cost FROM {}.{} WHERE cost <> 0 AND invoice.month = FORMAT_DATE("%Y%m", CURRENT_DATE()) GROUP BY service'
+  METRIC_NAME: "estimated_charges"
+  PROJECT_ID: "YOUR_PROJECT_ID"
+  GCP_MONTH_BILLING_TABLE: "TABLE_ID in format: dataset_name.table_name"

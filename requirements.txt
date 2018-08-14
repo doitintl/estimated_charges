@@ -1,0 +1,6 @@
+google
+google-cloud-bigquery
+google-cloud-monitoring
+google-api-python-client
+google-auth
+flask
