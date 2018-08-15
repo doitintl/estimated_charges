@@ -36,13 +36,12 @@ class MetricCalculator:
 			print("Create: {}/metricDescriptors/{}".format(project_name, metric_descriptor["type"]))
 
 	@staticmethod
-	def calculate_custom_metric(df_results):
+	def calculate_custom_metric(result):
 		now = time.time()
 
 		# TODO: load all number in one run
 		ts_list = []
-		for row in df_results.iterrows():
-			row = row[1]
+		for row in result:
 			try:
 				if row['cost'] != 0:
 					time_series = monitoring_v3.types.TimeSeries()
