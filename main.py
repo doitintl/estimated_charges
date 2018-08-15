@@ -21,7 +21,7 @@ def init():
 def query_costs():
     # [START query_costs]
     result = get_data_from_bq(project_id=project_id, billing_table=os.getenv("GCP_MONTH_BILLING_TABLE"))
-    ts_list = MetricCalculator.calculate_custom_metric(df_results=result)
+    ts_list = MetricCalculator.calculate_custom_metric(result=result)
     StackDriverWriter.write_custom_metric(ts_list=ts_list, project_id=project_id)
     return ""
     # [END query_costs]

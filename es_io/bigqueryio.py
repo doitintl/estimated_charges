@@ -1,4 +1,3 @@
-import os
 from google.cloud import bigquery
 
 QUERY = """SELECT
@@ -25,7 +24,7 @@ def get_data_from_bq(project_id, billing_table):
 	:param billing_table: The dataset and table name containing the billing data
 	:return: BQ result set in dataframe format
 	"""
-	bq_client = bigquery.Client().from_service_account_json(os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
+	bq_client = bigquery.Client()
 	query_job = bq_client.query(QUERY.format(project_id, billing_table))
 
 	return query_job  # Waits for job to complete.

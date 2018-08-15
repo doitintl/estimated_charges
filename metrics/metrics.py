@@ -23,8 +23,7 @@ metric_descriptor = {
 class MetricCalculator:
 	@staticmethod
 	def init_custom_metric(project_id):
-		client = monitoring_v3.MetricServiceClient().from_service_account_json(
-			os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
+		client = monitoring_v3.MetricServiceClient()
 		project_name = client.project_path(project_id)
 
 		try:

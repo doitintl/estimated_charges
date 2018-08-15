@@ -1,4 +1,3 @@
-import os
 import logging
 from google.cloud import monitoring_v3
 
@@ -13,8 +12,7 @@ class StackDriverWriter:
 		:return:
 		"""
 		try:
-			sd_client = monitoring_v3.MetricServiceClient().from_service_account_json(
-				os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
+			sd_client = monitoring_v3.MetricServiceClient()
 			project_name = sd_client.project_path(project_id)
 			for ts in ts_list:
 				sd_client.create_time_series(project_name, [ts])
