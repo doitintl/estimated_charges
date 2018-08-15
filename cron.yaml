@@ -1,0 +1,4 @@
+cron:
+- description: "Update Estimated Charges metric"
+  url: /estimated_charges
+  schedule: every 5 minutes

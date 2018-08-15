@@ -8,8 +8,6 @@ from metrics.metrics import MetricCalculator
 app = Flask(__name__)
 project_id = os.getenv("PROJECT_ID")
 
-# TODO: Add cron
-
 
 def init():
     # [START init]
@@ -18,6 +16,13 @@ def init():
 
 
 @app.route('/', methods=['GET'])
+def default():
+    # [START default]
+    return "Looks like you are in the wrong place..."
+    # [END default]
+
+
+@app.route('/estimated_charges', methods=['GET'])
 def query_costs():
     # [START query_costs]
     result = get_data_from_bq(project_id=project_id, billing_table=os.getenv("GCP_MONTH_BILLING_TABLE"))
