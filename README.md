@@ -25,6 +25,13 @@ Make sure you have the [Google Cloud SDK](https://cloud.google.com/sdk/) install
 ### Export Billing Data to BigQuery
 Follow the instructions described in the [Export Billing Data to BigQuery](https://cloud.google.com/billing/docs/how-to/export-data-bigquery) document 
 
+### Allow App Engine access to the BigQuery dataset
+* From Google [cloud console IAM](https://console.cloud.google.com/iam-admin/iam) section, copy the App Engine's service account ID. Should look like `my-playground@appspot.gserviceaccount.com`
+* Add this service account to the dataset's authorised users
+
+You can read more here: [Introduction to Authentication](https://cloud.google.com/bigquery/docs/authentication/)
+
+
 ### Install dependencies
 Before running or deploying this application, install the dependencies using [pip](http://pip.readthedocs.io/en/stable/):
 ```
