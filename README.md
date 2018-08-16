@@ -1,16 +1,18 @@
 # Estimated Charges metric for GCP
 
 ## General
-As some of you might already know, DoiT International is the engineering power behind [reOptimize](http://www.reoptimize.io/) — Cost Discovery and Optimization SaaS for Google Cloud Platform.
+
 With [reOptimize](http://www.reoptimize.io/) you can get instant insights on your Google Cloud Platform billing, manage budgets, set up cost allocations and explore different cost optimization strategies.
 
-While [reOptimize](http://www.reoptimize.io/) gives you the full view and the ability to slice and dice the costs, sometimes all you need is a simple tool to show your expenses over time.
+While [reOptimize](http://www.reoptimize.io/) gives you the full view and the ability to slice and dice the costs, sometimes all you need is a simple tool to track your cloud expenses over time with some Stackdriver alerting and .
 
-Here come the Estimated Charges metric to the rescue.
+Here come the Stackdriver `Estimated Charges` metric to the rescue.
 
-"Estimated Charges" metric takes the billing data [exported](https://cloud.google.com/billing/docs/how-to/export-data-bigquery) to [BigQuery](https://cloud.google.com/bigquery) by Google and load it as a metric to [StackDriver](https://cloud.google.com/stackdriver/).
- This is done per service so you can see how much each of the services cost per hour.
-The metric is build using a scheduled job running on [app engine](https://cloud.google.com/appengine/) Standard environment.
+"Estimated Charges" metric takes the billing data [exported](https://cloud.google.com/billing/docs/how-to/export-data-bigquery) to [BigQuery](https://cloud.google.com/bigquery) by Google and publishes it as a custom metric to [StackDriver](https://cloud.google.com/stackdriver/).
+
+The metric has labels per Google Cloud service (e.g. Compute Engine, Storage etc.) so you can track each of the services cost individually over time.
+
+The metric is generated using a scheduled cron job running on [app engine](https://cloud.google.com/appengine/) Standard environment.
 
 ## Setup
 [![Open in Cloud Shell][shell_img]][shell_link]
