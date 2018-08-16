@@ -1,9 +1,9 @@
 import time
-import os
 from google.cloud import monitoring_v3
 
 CUSTOM_METRIC_DOMAIN = "custom.googleapis.com"
-METRIC_TYPE = "{}/{}".format(CUSTOM_METRIC_DOMAIN, os.getenv("METRIC_NAME"))
+METRIC_NAME = "estimated_charges"
+METRIC_TYPE = "{}/{}".format(CUSTOM_METRIC_DOMAIN, METRIC_NAME)
 
 metric_descriptor = {
 	"description": "Recent cost",

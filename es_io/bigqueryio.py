@@ -9,7 +9,7 @@ QUERY = """SELECT
 					FROM
 						UNNEST(credits) AS credit), 0)) AS cost
 			FROM
-				`{}.{}`
+				`{}`
 			WHERE
 				cost <> 0
 				AND invoice.month = FORMAT_DATE("%Y%m",CURRENT_DATE())
@@ -17,14 +17,13 @@ QUERY = """SELECT
 				service"""
 
 
-def get_data_from_bq(project_id, billing_table):
+def get_data_from_bq(billing_table):
 	"""
 
-	:param project_id: GCP project ID
 	:param billing_table: The dataset and table name containing the billing data
 	:return: BQ result set in dataframe format
 	"""
 	bq_client = bigquery.Client()
-	query_job = bq_client.query(QUERY.format(project_id, billing_table))
+	query_job = bq_client.query(QUERY.format(billing_table))
 
 	return query_job  # Waits for job to complete.

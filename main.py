@@ -7,6 +7,7 @@ from metrics.metrics import MetricCalculator
 
 app = Flask(__name__)
 project_id = os.getenv("PROJECT_ID")
+BILLING_TABLE = os.getenv("GCP_MONTH_BILLING_TABLE")
 
 
 def init():
@@ -25,7 +26,7 @@ def default():
 @app.route('/estimated_charges', methods=['GET'])
 def query_costs():
     # [START query_costs]
-    result = get_data_from_bq(project_id=project_id, billing_table=os.getenv("GCP_MONTH_BILLING_TABLE"))
+    result = get_data_from_bq(BILLING_TABLE)
     ts_list = MetricCalculator.calculate_custom_metric(result=result)
     StackDriverWriter.write_custom_metric(ts_list=ts_list, project_id=project_id)
     return ""
@@ -38,4 +39,4 @@ if __name__ == "__main__":
         app.run()
         # app.run(debug=False)
     except Exception as e:
-        logging.error(e)
+        logging.error(e.with_traceback())

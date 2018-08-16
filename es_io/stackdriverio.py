@@ -17,4 +17,4 @@ class StackDriverWriter:
 			for ts in ts_list:
 				sd_client.create_time_series(project_name, [ts])
 		except Exception as e:
-			logging.error(e)
+			logging.error(e.with_traceback())
