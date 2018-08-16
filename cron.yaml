@@ -2,3 +2,4 @@ cron:
 - description: "Update Estimated Charges metric"
   url: /estimated_charges
   schedule: every 1 hours
+  target: estimated-charges

@@ -43,7 +43,7 @@ dev_appserver.py .
 ### Deploy the app
 To deploy your version into your project run:
 ```
-gcloud app deploy app.yaml dispatch.yaml cron.yaml
+gcloud app deploy app.yaml cron.yaml
 ```
 
 ### Setting up a report on stackdriver's metrics-explorer
