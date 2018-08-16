@@ -1,10 +1,10 @@
-# Estimated Charges metric for GCP
+# Estimated Charges metric for Google Cloud
 
 ## General
 
 With [reOptimize](http://www.reoptimize.io/) you can get instant insights on your Google Cloud Platform billing, manage budgets, set up cost allocations and explore different cost optimization strategies.
 
-While [reOptimize](http://www.reoptimize.io/) gives you the full view and the ability to slice and dice the costs, sometimes all you need is a simple tool to track your cloud expenses over time with some Stackdriver alerting and .
+While reOptimize gives you the full view and the ability to slice and dice the costs, sometimes all you need is a simple tool to track your cloud expenses over time with some Stackdriver alerting and .
 
 Here come the Stackdriver `Estimated Charges` metric to the rescue.
 
