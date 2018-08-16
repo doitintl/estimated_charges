@@ -4,7 +4,7 @@
 As some of you might already know, DoiT International is the engineering power behind [reOptimize](http://www.reoptimize.io/) — Cost Discovery and Optimization SaaS for Google Cloud Platform.
 With [reOptimize](http://www.reoptimize.io/) you can get instant insights on your Google Cloud Platform billing, manage budgets, set up cost allocations and explore different cost optimization strategies.
 
-While [reOptimize](http://www.reoptimize.io/) gives you the full view and the ability to slice and dice the costs, sometimes all you need is a simple tool to show your expences over time.
+While [reOptimize](http://www.reoptimize.io/) gives you the full view and the ability to slice and dice the costs, sometimes all you need is a simple tool to show your expenses over time.
 
 Here come the Estimated Charges metric to the rescue.
 
@@ -33,7 +33,7 @@ pip install -t lib/ -r requirements.txt
 ### Setting up some parameters
 Before deploying the service you will need to set some values in the app.yaml file.
 * `PROJECT_ID`: "YOUR_PROJECT_ID" as written in the [Project Settings](https://console.cloud.google.com/iam-admin/settings/project?project=yoram-playground). This is the project in which you would like to see the metric
-* `GCP_BILLING_TABLE`: Source Table id for the BigQuery table in format: `project_id.dataset_name.table_name`. The source table may sit in a different project then the one creating and showing the metric.
+* `GCP_BILLING_TABLE`: Source Table id for the BigQuery table in format: `project_id.dataset_name.table_name`. The source table may sit in a different project than the one creating and showing the metric.
 
 **Example:**
 ```
@@ -50,4 +50,4 @@ gcloud app deploy app.yaml cron.yaml
 
 ### Setting up a report on stackdriver's metrics-explorer
 * Go to [stackdriver's metrics-explorer](https://app.google.stackdriver.com/metrics-explorer) page
-* Enter estimated_charges for metric type
+* Enter estimated_charges for the metric type
