@@ -32,8 +32,8 @@ pip install -t lib/ -r requirements.txt
 
 ### Setting up some parameters
 Before creating the ___ you will need to set some values in the app.yaml file.
-* PROJECT_ID: "YOUR_PROJECT_ID" as written in the [Project Settings](https://console.cloud.google.com/iam-admin/settings/project?project=yoram-playground).
-* GCP_MONTH_BILLING_TABLE: Table id for the BigQuery table in format: dataset_name.table_name
+* `PROJECT_ID`: "YOUR_PROJECT_ID" as written in the [Project Settings](https://console.cloud.google.com/iam-admin/settings/project?project=yoram-playground).
+* `GCP_MONTH_BILLING_TABLE`: Table id for the BigQuery table in format: dataset_name.table_name
 
 ### Running the app locally
 ```
