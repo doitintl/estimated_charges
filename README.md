@@ -41,11 +41,6 @@ env_variables:
   PROJECT_ID: "my-playground"
   GCP_BILLING_TABLE: "my-playground.gcp_billing.gcp_billing_export"
 ```
-
-### Running the app locally
-```
-dev_appserver.py .
-```
     
 ### Deploy the app
 To deploy your version into your project run:
