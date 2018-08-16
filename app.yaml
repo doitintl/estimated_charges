@@ -15,6 +15,5 @@ handlers:
   login: admin
 
 env_variables:
-  METRIC_NAME: "estimated_charges"
   PROJECT_ID: "YOUR_PROJECT_ID"
-  GCP_MONTH_BILLING_TABLE: "TABLE_ID in format: dataset_name.table_name"
+  GCP_BILLING_TABLE: "TABLE_ID in format: dataset_name.table_name"

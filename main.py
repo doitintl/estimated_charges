@@ -7,7 +7,7 @@ from metrics.metrics import MetricCalculator
 
 app = Flask(__name__)
 project_id = os.getenv("PROJECT_ID")
-BILLING_TABLE = os.getenv("GCP_MONTH_BILLING_TABLE")
+BILLING_TABLE = os.getenv("GCP_BILLING_TABLE")
 
 
 def init():

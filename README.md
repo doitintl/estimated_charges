@@ -33,7 +33,14 @@ pip install -t lib/ -r requirements.txt
 ### Setting up some parameters
 Before deploying the service you will need to set some values in the app.yaml file.
 * `PROJECT_ID`: "YOUR_PROJECT_ID" as written in the [Project Settings](https://console.cloud.google.com/iam-admin/settings/project?project=yoram-playground). This is the project in which you would like to see the metric
-* `GCP_MONTH_BILLING_TABLE`: Source Table id for the BigQuery table in format: project_id.dataset_name.table_name. The source table may sit in a different project then the one creating and showing the metric.
+* `GCP_BILLING_TABLE`: Source Table id for the BigQuery table in format: `project_id.dataset_name.table_name`. The source table may sit in a different project then the one creating and showing the metric.
+
+**Example:**
+```
+env_variables:
+  PROJECT_ID: "my-playground"
+  GCP_BILLING_TABLE: "my-playground.gcp_billing.gcp_billing_export"
+```
 
 ### Running the app locally
 ```
