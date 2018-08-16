@@ -38,7 +38,6 @@ class MetricCalculator:
 	def calculate_custom_metric(result):
 		now = time.time()
 
-		# TODO: load all number in one run
 		ts_list = []
 		for row in result:
 			try:

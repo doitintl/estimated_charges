@@ -14,7 +14,6 @@ class StackDriverWriter:
 		try:
 			sd_client = monitoring_v3.MetricServiceClient()
 			project_name = sd_client.project_path(project_id)
-			for ts in ts_list:
-				sd_client.create_time_series(project_name, [ts])
+			sd_client.create_time_series(project_name, ts_list)
 		except Exception as e:
 			logging.error(e.with_traceback())
